@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <header>
-        <h1>How old am I?</h1>
+        <h1>Flex</h1>
       </header>
 
       <div>
