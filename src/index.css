@@ -1,0 +1,49 @@
+* {
+  font-family: Inter;
+  font-weight: 500;
+  text-align: center;
+}
+
+header {
+  height: 100px;
+  background-color: #211182;
+  position: relative;
+}
+
+h1 {
+  padding-top: 2%;
+  color: #f36767;
+  display: inline-flex;
+}
+.selectors {
+  background-color: #f36767;
+  border-radius: 6.28px;
+  color: #1e0d8c;
+  font-size: 17px;
+  height: 30px;
+}
+.age {
+  font-size: 23px;
+  color: #1e0d8c;
+  padding-top: 30px;
+}
+.results {
+  font-size: 30px;
+  padding-top: 15px;
+  color: #1e0d8c;
+}
+h2 {
+  color: #f36767 !important;
+}
+
+select {
+  margin-bottom: 3%;
+}
+
+body {
+  margin: 0;
+}
+
+#birthday {
+  padding-top: 15px;
+}
