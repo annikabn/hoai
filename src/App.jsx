@@ -8,17 +8,21 @@ function App() {
       <header>
         <h1>How old am I?</h1>
       </header>
+
       <div className="maincontainer">
-        <div className="children">
+        <div className="child">
           <h3 className="age" id="birthday">
             My Birthday:
           </h3>
+
           <input type="date" className="selectors" id="calender"></input>
         </div>
-        <div className="children">
+
+        <div className="child">
           <h3 className="age" id="age">
             My Age in:
           </h3>
+
           <select className="selectors" id="dropdown">
             <option value="years">Years</option>
             <option value="months">Months</option>
@@ -29,7 +33,8 @@ function App() {
             <option value="seconds">Seconds</option>
           </select>
         </div>
-        <div className="children" id="last">
+
+        <div className="child" id="last">
           <h3 className="results" id="im">
             I am
           </h3>
