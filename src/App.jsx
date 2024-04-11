@@ -3,6 +3,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
 function App() {
+  const [period, setPeriod] = useState("years");
+
+  function handlePeriodChange(e) {
+    console.log(e.currentTarget.value);
+    setPeriod(e.currentTarget.value);
+  }
+
   return (
     <div className="fullscreen">
       <header>
@@ -23,7 +30,12 @@ function App() {
             My Age in:
           </h3>
 
-          <select className="selectors" id="dropdown">
+          <select
+            className="selectors"
+            id="dropdown"
+            onChange={handlePeriodChange}
+            value={period}
+          >
             <option value="years">Years</option>
             <option value="months">Months</option>
             <option value="weeks">Weeks</option>
@@ -39,7 +51,7 @@ function App() {
             I am
           </h3>
           <h2 className="results" id="result">
-            ___________
+            {period}
           </h2>
           <h3 className="results" id="old">
             old
