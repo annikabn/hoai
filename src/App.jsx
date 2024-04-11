@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="fullscreen">
       <header>
-        <h1>Flex</h1>
+        <h1>How old am I?</h1>
       </header>
       <div className="maincontainer">
         <div className="children">
