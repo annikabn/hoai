@@ -29,7 +29,7 @@ function App() {
             <option value="seconds">Seconds</option>
           </select>
         </div>
-        <div className="children">
+        <div className="children" id="last">
           <h3 className="results" id="im">
             I am
           </h3>

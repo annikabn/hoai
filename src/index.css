@@ -2,13 +2,13 @@
   font-family: Inter;
   font-weight: 500;
   text-align: center;
-  overflow: scroll;
 }
 
 header {
   height: 100px;
   background-color: #211182;
   position: relative;
+  flex-grow: -1;
 }
 
 h1 {
@@ -23,23 +23,24 @@ h1 {
   font-size: 17px;
   height: 30px;
   width: 150px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 .age {
   font-size: 23px;
   color: #1e0d8c;
-  padding-top: 30px;
+  padding-top: auto;
+  margin: 10px;
 }
 .results {
   font-size: 30px;
-  padding-top: 15px;
+  margin-top: 10px;
   color: #1e0d8c;
+  margin-bottom: 10px;
 }
 h2 {
   color: #f36767 !important;
-}
-
-select {
-  margin-bottom: 3%;
 }
 
 body {
@@ -54,12 +55,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  overflow: hidden;
 }
 
 .children {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 0.5;
 }
 
 html,
@@ -80,13 +82,9 @@ html,
   min-height: 100vh;
 }
 
-.selectors {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 #last {
-  flex-grow: 1;
-  overflow: scroll;
+  flex-grow: 0.5;
+  overflow: hidden;
+  min-width: 10px;
+  min-height: 5px;
 }
