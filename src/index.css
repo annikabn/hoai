@@ -47,3 +47,24 @@ body {
 #birthday {
   padding-top: 15px;
 }
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.root {
+  margin: 0;
+  height: 100%;
+}
