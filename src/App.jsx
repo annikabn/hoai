@@ -1,14 +1,18 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { formatDistanceToNowStrict } from "date-fns";
 
 function App() {
   const [period, setPeriod] = useState("years");
+  const [date, setDate] = useState(new Date());
 
   function handlePeriodChange(e) {
-    console.log(e.currentTarget.value);
     setPeriod(e.currentTarget.value);
   }
+  function handleDateChange(e) {
+    setDate(e.currentTarget.value);
+  }
+
+  const distance = formatDistanceToNowStrict(date, { unit: period });
 
   return (
     <div className="fullscreen">
@@ -22,7 +26,13 @@ function App() {
             My Birthday:
           </h3>
 
-          <input type="date" className="selectors" id="calender"></input>
+          <input
+            type="date"
+            className="selectors"
+            id="calender"
+            onChange={handleDateChange}
+            value={date}
+          ></input>
         </div>
 
         <div className="child">
@@ -36,13 +46,12 @@ function App() {
             onChange={handlePeriodChange}
             value={period}
           >
-            <option value="years">Years</option>
-            <option value="months">Months</option>
-            <option value="weeks">Weeks</option>
-            <option value="days">Days</option>
-            <option value="hours">Hours</option>
-            <option value="minutes">Minutes</option>
-            <option value="seconds">Seconds</option>
+            <option value="year">Years</option>
+            <option value="month">Months</option>
+            <option value="day">Days</option>
+            <option value="hour">Hours</option>
+            <option value="minute">Minutes</option>
+            <option value="second">Seconds</option>
           </select>
         </div>
 
@@ -51,7 +60,7 @@ function App() {
             I am
           </h3>
           <h2 className="results" id="result">
-            {period}
+            {distance}
           </h2>
           <h3 className="results" id="old">
             old
