@@ -12,7 +12,10 @@ function App() {
     setDate(e.currentTarget.value);
   }
 
-  const distance = formatDistanceToNowStrict(date, { unit: period });
+  const distance = formatDistanceToNowStrict(date, {
+    unit: period,
+    roundingMethod: "floor",
+  });
 
   return (
     <div className="fullscreen">
