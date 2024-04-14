@@ -1,6 +1,25 @@
 import { useState } from "react";
 import { formatDistanceToNowStrict } from "date-fns";
 
+function getDistance(date, period) {
+  if (period === "week") {
+    const str = formatDistanceToNowStrict(date, {
+      unit: "day",
+      roundingMethod: "floor",
+    });
+
+    const split = str.split(" ");
+    const day = parseInt(split[0]);
+    const week = Math.floor(day / 7);
+    return `${week} weeks`;
+  }
+
+  return formatDistanceToNowStrict(date, {
+    unit: period,
+    roundingMethod: "floor",
+  });
+}
+
 function App() {
   const [period, setPeriod] = useState("years");
   const [date, setDate] = useState(new Date());
@@ -12,10 +31,7 @@ function App() {
     setDate(e.currentTarget.value);
   }
 
-  const distance = formatDistanceToNowStrict(date, {
-    unit: period,
-    roundingMethod: "floor",
-  });
+  const distance = getDistance(date, period);
 
   return (
     <div className="fullscreen">
@@ -51,6 +67,7 @@ function App() {
           >
             <option value="year">Years</option>
             <option value="month">Months</option>
+            <option value="week">Weeks</option>
             <option value="day">Days</option>
             <option value="hour">Hours</option>
             <option value="minute">Minutes</option>
