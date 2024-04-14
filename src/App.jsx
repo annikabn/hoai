@@ -11,7 +11,7 @@ function getDistance(date, period) {
     const split = str.split(" ");
     const day = parseInt(split[0]);
     const week = Math.floor(day / 7);
-    return `${week} weeks`;
+    return `${week} week${week > 1 ? "s" : ""}`;
   }
 
   return formatDistanceToNowStrict(date, {
